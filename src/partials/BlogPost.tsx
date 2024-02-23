@@ -1,8 +1,9 @@
-import type { IFrontmatter } from 'astro-boilerplate-components';
-import { PostContent, PostHeader, Section } from 'astro-boilerplate-components';
 import type { ReactNode } from 'react';
 
+import { PostContent, PostHeader, Section } from '@/components';
 import { AppConfig } from '@/utils/AppConfig';
+
+import type { IFrontmatter } from '../types';
 
 type IBlogPostProps = {
   frontmatter: IFrontmatter;

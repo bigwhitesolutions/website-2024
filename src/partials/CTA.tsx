@@ -1,19 +1,14 @@
-import {
-  GradientText,
-  Newsletter,
-  Section,
-} from 'astro-boilerplate-components';
+import { GradientText, Newsletter, Section } from '@/components';
 
 const CTA = () => (
   <Section>
     <Newsletter
       title={
         <>
-          Subscribe to my <GradientText>Newsletters</GradientText>
+          <GradientText>Work with me</GradientText>
         </>
       }
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero
-          esse non molestias eos excepturi, inventore atque cupiditate."
+      description="If you would like to reach out to discuss opportunities please contact me at shaun@bigwhitesolutions.com"
     />
   </Section>
 );

@@ -4,38 +4,24 @@ import {
   NavMenu,
   NavMenuItem,
   Section,
-} from 'astro-boilerplate-components';
+} from '@/components';
+import logo from '@/images/bws-icon-white.svg';
 
 const Navbar = () => (
   <Section>
     <NavbarTwoColumns>
       <a href="/">
         <Logo
-          icon={
-            <svg
-              className="mr-1 h-10 w-10 stroke-cyan-600"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M0 0h24v24H0z" stroke="none"></path>
-              <rect x="3" y="12" width="6" height="8" rx="1"></rect>
-              <rect x="9" y="8" width="6" height="12" rx="1"></rect>
-              <rect x="15" y="4" width="6" height="16" rx="1"></rect>
-              <path d="M4 20h14"></path>
-            </svg>
-          }
-          name="Ixartz's Blog"
+          icon={<img src={logo.src} width={logo.width} height={logo.height} />}
+          name="Big White Solutions"
         />
       </a>
 
       <NavMenu>
-        <NavMenuItem href="/posts/">Blogs</NavMenuItem>
-        <NavMenuItem href="/">GitHub</NavMenuItem>
-        <NavMenuItem href="/">Twitter</NavMenuItem>
+        <NavMenuItem href="/posts/">Posts</NavMenuItem>
+        <NavMenuItem target="blank" href="https://cv.shaunpearson.dev/">
+          CV
+        </NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>

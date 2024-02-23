@@ -1,64 +1,45 @@
-import {
-  GradientText,
-  HeroAvatar,
-  HeroSocial,
-  Section,
-} from 'astro-boilerplate-components';
+import { HeroAvatar, HeroSocial, Section } from '@/components';
 
 const Hero = () => (
   <Section>
     <HeroAvatar
       title={
         <>
-          Hi there, I'm <GradientText>Ixartz</GradientText> 👋
+          <span className="text-cyan-800">
+            A software consultant that specialises in Microsoft Technologies and
+            Azure
+          </span>
         </>
       }
       description={
         <>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            malesuada
-          </a>{' '}
-          nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor sit amet,{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            consectetur
-          </a>{' '}
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          Results-driven Software Architect with over 15 years of comprehensive
+          experience in the software industry, specializing in Azure solutions
+          for the past 6 years. Proven track record of translating business
+          challenges into high-quality technical specifications through direct
+          engagement with end-users. Adept at maintaining a security-centric
+          approach, with a background spanning both the defence and fintech
+          sectors. Recognized as a strong leader and collaborative team player,
+          committed to fostering an environment that drives project success. For
+          opportunities please contact shaun@bigwhitesolutions.com
         </>
-      }
-      avatar={
-        <img
-          className="h-80 w-64"
-          src="/assets/images/avatar.svg"
-          alt="Avatar image"
-          loading="lazy"
-        />
       }
       socialButtons={
         <>
-          <a href="/">
+          <a href="https://github.com/bigwhitesolutions">
             <HeroSocial
-              src="/assets/images/twitter-icon.png"
-              alt="Twitter icon"
+              src="/assets/images/github-mark-white.png"
+              alt="Github icon"
             />
           </a>
-          <a href="/">
+          <a href="https://www.linkedin.com/in/shaunpearsonbws/">
             <HeroSocial
-              src="/assets/images/facebook-icon.png"
-              alt="Facebook icon"
-            />
-          </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/linkedin-icon.png"
+              src="/assets/images/LI-In-square.png"
               alt="Linkedin icon"
             />
           </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/youtube-icon.png"
-              alt="Youtube icon"
-            />
+          <a href="https://cv.shaunpearson.dev/">
+            <HeroSocial src="/assets/images/cv-white.png" alt="CV icon" />
           </a>
         </>
       }
