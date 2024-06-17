@@ -7,7 +7,7 @@ import {
 } from '@/components';
 import logo from '@/images/bws-icon-white.svg';
 
-const Navbar = () => (
+const Navbar = ({ hasPosts }: { hasPosts: boolean }) => (
   <Section>
     <NavbarTwoColumns>
       <a href="/">
@@ -18,7 +18,8 @@ const Navbar = () => (
       </a>
 
       <NavMenu>
-        <NavMenuItem href="/posts/">Posts</NavMenuItem>
+        {hasPosts ? <NavMenuItem href="/posts/">Posts</NavMenuItem> : undefined}
+        <NavMenuItem href="/meetups/">Meetups</NavMenuItem>
         <NavMenuItem target="blank" href="https://cv.shaunpearson.dev/">
           CV
         </NavMenuItem>

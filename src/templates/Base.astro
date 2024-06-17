@@ -1,6 +1,7 @@
 ---
 import { Footer } from '@/partials/Footer';
 import { Navbar } from '@/partials/Navbar';
+import type { IFrontmatter } from '@/types';
 import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
@@ -13,6 +14,14 @@ export interface Props {
 const {
   head: { title, description },
 } = Astro.props as Props;
+
+let hasPosts: boolean = false;
+try {
+  const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
+  hasPosts = allPosts.length > 0;
+} catch (e) {
+  // ignore no files found
+}
 ---
 
 <html lang='en'>
@@ -32,8 +41,8 @@ const {
       rel='stylesheet'
     />
   </head>
-  <body class='bg-slate-900 text-gray-400'>
-    <Navbar />
+  <body class='bg-slate-900 text-slate-400'>
+    <Navbar hasPosts={hasPosts} />
 
     <slot></slot>
 

@@ -1,0 +1,19 @@
+---
+import { MeetupPost } from '@/partials/MeetupPost';
+import Base from '@/templates/Base.astro';
+import type { IMeetupFrontMatter } from '@/types';
+import { AppConfig } from '@/utils/AppConfig';
+
+export interface Props {
+  content: IMeetupFrontMatter;
+}
+
+const { content } = Astro.props as Props;
+const title = `${content.group} - ${AppConfig.site_name}`;
+---
+
+<Base head={{ title, description: content.description }}>
+  <MeetupPost frontmatter={content}>
+    <slot></slot>
+  </MeetupPost>
+</Base>

@@ -1,15 +1,27 @@
 ---
-import type { IFrontmatter } from 'astro-boilerplate-components';
+import type { MarkdownInstance } from 'astro/dist/@types/astro';
 
 import { Hero } from '@/partials/Hero';
+import { RecentMeetups } from '@/partials/Meetups';
 import { RecentPosts } from '@/partials/RecentPosts';
 import Base from '@/templates/Base.astro';
+import type { IFrontmatter, IMeetupFrontMatter } from '@/types';
 import { AppConfig } from '@/utils/AppConfig';
-import { sortByDate } from '@/utils/Posts';
+import { sortByDate, sortByMeetupDate } from '@/utils/Posts';
 
-const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
+let allPosts: MarkdownInstance<IFrontmatter>[] = [];
+try {
+  allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
+} catch (e) {
+  // ignore no files found
+}
+
 const sortedPosts = sortByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 6);
+const lastThreePosts = sortedPosts.slice(0, 3);
+
+const allMeetups = await Astro.glob<IMeetupFrontMatter>('./meetups/*.md');
+const sortedMeetups = sortByMeetupDate(allMeetups);
+const lastThreeMeetups = sortedMeetups.slice(0, 3);
 
 const { title } = AppConfig;
 const { description } = AppConfig;
@@ -17,5 +29,8 @@ const { description } = AppConfig;
 
 <Base head={{ title, description }}>
   <Hero />
-  <RecentPosts postList={lastThreePosts} />
+  <RecentMeetups postList={lastThreeMeetups} />
+  {lastThreePosts.length > 0 ? (
+    <RecentPosts postList={lastThreePosts} />
+  ) : undefined}
 </Base>

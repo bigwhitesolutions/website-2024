@@ -5,9 +5,9 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          <span className="text-cyan-800">
-            A software consultant that specialises in Microsoft Technologies and
-            Azure
+          <span className="text-blue-500">
+            A software consultant that specialises in Azure and Microsoft
+            Technologies
           </span>
         </>
       }
@@ -15,13 +15,15 @@ const Hero = () => (
         <>
           Results-driven Software Architect with over 15 years of comprehensive
           experience in the software industry, specializing in Azure solutions
-          for the past 6 years. Proven track record of translating business
+          for the past 7 years. Proven track record of translating business
           challenges into high-quality technical specifications through direct
           engagement with end-users. Adept at maintaining a security-centric
           approach, with a background spanning both the defence and fintech
           sectors. Recognized as a strong leader and collaborative team player,
-          committed to fostering an environment that drives project success. For
-          opportunities please contact shaun@bigwhitesolutions.com
+          committed to fostering an environment that drives project success.
+          Co-Organiser of .NET Thames Valley meetup group, passionate about
+          creating a community for sharing knowledge For opportunities please
+          contact shaun@bigwhitesolutions.com
         </>
       }
       socialButtons={

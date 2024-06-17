@@ -1,7 +1,10 @@
-import type { FrontmatterPage } from '../types/IFrontMatter';
+import type {
+  FrontmatterPage,
+  MeetupFrontmatterPage,
+} from '../types/IFrontMatter';
 
 type INewerOlderPaginationProps = {
-  page: FrontmatterPage;
+  page: FrontmatterPage | MeetupFrontmatterPage;
 };
 
 const NewerOlderPagination = (props: INewerOlderPaginationProps) => (
