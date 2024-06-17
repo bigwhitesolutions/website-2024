@@ -6,7 +6,7 @@ import {
   Section,
 } from '@/components';
 import Base from '@/templates/Base.astro';
-import type { FrontmatterPage, IFrontmatter } from '@/types';
+import type { FrontmatterPage, IFrontmatter, MarkdownInstance } from '@/types';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
 
@@ -15,7 +15,12 @@ type GetStaticPaths = {
 }; // Overrides `GetStaticPathsOptions` types from Astro
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const allPosts = await Astro.glob<IFrontmatter>('./*.md');
+  let allPosts: MarkdownInstance<IFrontmatter>[] = [];
+  try {
+    allPosts = await Astro.glob<IFrontmatter>('./*.md');
+  } catch {
+    // ignore no files found
+  }
   const sortedPosts = sortByDate(allPosts);
 
   // Return a paginated collection of paths for all posts
