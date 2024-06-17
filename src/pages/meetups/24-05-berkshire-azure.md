@@ -5,6 +5,7 @@ group: Berkshire Azure User Group
 location: Microsoft Campus, TVP
 date: 2024-05-15T00:00:00Z
 link: https://www.meetup.com/berkshire-azure-user-group/events/300567643/
+attended: true
 ---
 ## Venue
 
